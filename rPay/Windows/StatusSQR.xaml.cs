@@ -50,7 +50,7 @@ namespace rPay.Windows
                 ListStatus.Items.Refresh();
                 foreach (PayStatus payStatus in context.PayStatus)
                 {
-                    ListStatus.Items.Add(payStatus).ToString(); // asd
+                    ListStatus.Items.Add(payStatus).ToString();
                 }
             }
         }
