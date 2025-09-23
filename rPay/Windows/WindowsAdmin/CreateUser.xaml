@@ -1,0 +1,27 @@
+﻿<Window x:Class="rPay.Windows.WindowsAdmin.CreateUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rPay.Windows.WindowsAdmin"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="CreateUser" Height="430" MinHeight="430" MaxHeight="430" Width="600" MinWidth="600" MaxWidth="60">
+    <Grid>
+        <Label Content="Логин" FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="45" Margin="48,28,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="addLogin" FontSize="20" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="45" Margin="181,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+        <Label Content="Пароль" FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="45" Margin="48,91,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="addPassword" FontSize="20" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="45" Margin="181,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+        <Label Content="ФИО" FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="45" Margin="48,151,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="addFIO" FontSize="20" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="45" Margin="181,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+        <Button x:Name="addUser" Content="Создать" FontSize="30" HorizontalAlignment="Left" Height="63" Margin="111,267,0,0" VerticalAlignment="Top" Width="331" Click="addUser_Click"/>
+        <Label Content="Права" FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="45" Margin="48,217,0,0" VerticalAlignment="Top" Width="126"/>
+        <ComboBox x:Name="addPerm" HorizontalAlignment="Left" FontSize="20" Height="35" Margin="181,217,0,0" VerticalAlignment="Top" Width="261" SelectionChanged="addPerm_SelectionChanged">
+            <sys:String>User</sys:String>
+            <sys:String>UserAdmin</sys:String>
+            <sys:String>Admin</sys:String>
+        </ComboBox>
+
+
+    </Grid>
+</Window>

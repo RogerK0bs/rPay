@@ -1,0 +1,20 @@
+﻿<Window x:Class="rPay.Windows.StatusSQR"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rPay.Windows"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="StatusSQR" Height="500" MaxHeight="500" MinHeight="500" Width="750" MinWidth="750" MaxWidth="750">
+    <Grid>
+        <ListBox x:Name="ListStatus" HorizontalAlignment="Center" Height="397" Margin="0,77,0,0" VerticalAlignment="Top" Width="730" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="refStatus" Content="Обновить статус" HorizontalAlignment="Left" Height="42" Margin="10,10,0,0" VerticalAlignment="Top" Width="109"/>
+        <Button x:Name="getPay" Content="Получить платёж" HorizontalAlignment="Left" Height="42" Margin="124,10,0,0" VerticalAlignment="Top" Width="109" Click="getPay_Click"/>
+        <ComboBox x:Name="selectKassa" HorizontalAlignment="Left" Height="42" Margin="238,10,0,0" VerticalAlignment="Top" Width="258" SelectionChanged="selectKassa_SelectionChanged">
+            <sys:String>Регистратура - 1 этаж</sys:String>
+            <sys:String>Регистратура - 2 этаж</sys:String>
+            <sys:String>Регистратура - стационар</sys:String>
+        </ComboBox>
+    </Grid>
+</Window>
