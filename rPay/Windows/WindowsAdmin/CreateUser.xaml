@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:rPay.Windows.WindowsAdmin"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="CreateUser" Height="430" MinHeight="430" MaxHeight="430" Width="600" MinWidth="600" MaxWidth="60">
+        Title="Создание пользователя" Height="430" MinHeight="430" MaxHeight="430" Width="600" MinWidth="600" MaxWidth="60">
     <Grid>
         <Label Content="Логин" FontSize="20" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="45" Margin="48,28,0,0" VerticalAlignment="Top" Width="126"/>
         <TextBox x:Name="addLogin" FontSize="20" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="45" Margin="181,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>

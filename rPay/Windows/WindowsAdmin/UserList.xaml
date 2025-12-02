@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rPay.Windows.WindowsAdmin"
         mc:Ignorable="d"
-        Title="UserList" Height="900" MinHeight="900" MaxHeight="900" Width="1200" MinWidth="1200" MaxWidth="1200">
+        Title="Пользователи" Height="900" MinHeight="900" MaxHeight="900" Width="1200" MinWidth="1200" MaxWidth="1200">
     <Grid>
         <Button x:Name="updateUserList" Content="Обновить список" FontSize="23" HorizontalAlignment="Left" Height="43" Margin="10,10,0,0" VerticalAlignment="Top" Width="218" Click="updateUserList_Click"/>
         <Button x:Name="createUser" Content="Создать" FontSize="23" HorizontalAlignment="Left" Height="43" Margin="233,10,0,0" VerticalAlignment="Top" Width="218" Click="createUser_Click"/>

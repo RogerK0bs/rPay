@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rPay.Windows"
         mc:Ignorable="d"
-        Title="Start" Height="470" MaxHeight="470" MinHeight="470" Width="810" MaxWidth="810" MinWidth="810">
+        Title="Главное меню" Height="470" MaxHeight="470" MinHeight="470" Width="810" MaxWidth="810" MinWidth="810">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="404" Margin="10,20,0,0" VerticalAlignment="Top" Width="390">
             <Button x:Name="createOrder" Content="Создать платёж" FontSize="16" HorizontalAlignment="Left" Height="49" Margin="10,71,0,0" VerticalAlignment="Top" Width="142" Click="createOrder_Click"/>
