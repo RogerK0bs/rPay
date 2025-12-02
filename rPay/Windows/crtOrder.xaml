@@ -9,16 +9,16 @@
     <Grid>
         <Grid HorizontalAlignment="Center" Height="414" VerticalAlignment="Center" Width="780">
             <Label Content="Номер карты пациента" HorizontalContentAlignment="Right" FontSize="15" HorizontalAlignment="Left" Height="30" Margin="10,27,0,0" VerticalAlignment="Top" Width="171"/>
-            <TextBox x:Name="patientsСard" HorizontalContentAlignment="Center" HorizontalAlignment="Left" FontSize="15" Height="30" Margin="181,27,0,0" TextWrapping="Wrap" Text="46646611" VerticalAlignment="Top" Width="75"/>
+            <TextBox x:Name="patientsСard" HorizontalContentAlignment="Center" HorizontalAlignment="Left" FontSize="15" Height="30" Margin="181,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75"/>
             <Label Content="Сумма" FontSize="15" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="32" Margin="10,62,0,0" VerticalAlignment="Top" Width="171"/>
-            <TextBox x:Name="payment" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="181,62,0,0" TextWrapping="Wrap" Text="1000000.111" FontSize="15" VerticalAlignment="Top" Width="140"/>
+            <TextBox x:Name="payment" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="181,62,0,0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Top" Width="140"/>
             <Label Content="Действует до " HorizontalContentAlignment="Right" FontSize="15" HorizontalAlignment="Left" Height="30" Margin="10,97,0,0" VerticalAlignment="Top" Width="171"/>
             <DatePicker x:Name="endData" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="181,99,0,0" VerticalAlignment="Top" Width="140"/>
             <Button Content="Создать" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="10,152,0,0" VerticalAlignment="Top" Width="311" FontWeight="Bold" Click="Button_Click_2"/>
             <Label Content="Почта" FontSize="15" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="35" Margin="10,207,0,0" VerticalAlignment="Top" Width="55"/>
-            <TextBox x:Name="mailPacient" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="70,207,0,0" TextWrapping="Wrap" Text="ivanov.v@mail.ru" VerticalAlignment="Top" Width="275" FontStyle="Italic"/>
+            <TextBox x:Name="mailPacient" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="70,207,0,0" TextWrapping="Wrap" Text="СЕРВЕР НЕ НАСТРОЕН" VerticalAlignment="Top" Width="275" FontStyle="Italic"/>
             <Button Content="Отправить" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="10,247,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" Click="Button_Click_1"/>
-            <TextBox x:Name="urlResult" HorizontalAlignment="Left" Height="145" FontSize="15" Margin="419,27,0,0" TextWrapping="Wrap" Text="URL-ссылка на QR" VerticalAlignment="Top" Width="350"/>
+            <TextBox x:Name="urlResult" HorizontalAlignment="Left" Height="145" FontSize="15" Margin="419,27,0,0" TextWrapping="Wrap" Text="Если нажать на кнопку ОТПРАВИТЬ то тут появиться ссылка" VerticalAlignment="Top" Width="350"/>
             <Label Content="Если платёж был успешно сформирован, &#xD;&#xA;ссылка появится сверху" HorizontalContentAlignment="Center" FontSize="17" HorizontalAlignment="Left" Margin="419,177,0,0" VerticalAlignment="Top" Width="350" Height="65"/>
             <Label x:Name="resultSend" Content=""  FontSize="30" HorizontalAlignment="Left" Height="64" Margin="16,292,0,0" VerticalAlignment="Top" Width="323" FontStyle="Italic" Background="White" Foreground="#FF060302"/>
             <Button Content="Проверить платёж" FontSize="25" HorizontalAlignment="Left" Height="48" Margin="10,356,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" Click="Button_Click"/>

@@ -41,24 +41,27 @@ namespace rPay.Windows
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           
-           
-          
+            using (var context = new ApplicationContext())
+            {
+                RespPayment respPayment = new RespPayment();
+                var value = context.RespPayment.Count();
+                rPay.Service.resultPay valuePayLoad = new rPay.Service.resultPay();
+                urlResult.Text = valuePayLoad.payLoad(value).ToString();
+            }
+
+
+
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
             {
                API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text));
-               
-                using (var context = new ApplicationContext())
-                {
-                    RespPayment respPayment = new RespPayment();
-                    var resqr = context.RespPayment.LastOrDefault();
-                    urlResult.Text = resqr.payload.First().ToString();
-                }
+                
+              
                 resultSend.Content = "Успешно создано!";
                 resultSend.Foreground = System.Windows.Media.Brushes.Green;
+
             }
             catch (Exception ex) 
             {
