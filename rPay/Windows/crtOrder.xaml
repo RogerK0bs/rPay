@@ -18,7 +18,7 @@
             <Label Content="Почта" FontSize="15" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="35" Margin="10,207,0,0" VerticalAlignment="Top" Width="55"/>
             <TextBox x:Name="mailPacient" FontSize="15" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="70,207,0,0" TextWrapping="Wrap" Text="ivanov.v@mail.ru" VerticalAlignment="Top" Width="275" FontStyle="Italic"/>
             <Button Content="Отправить" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="10,247,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" Click="Button_Click_1"/>
-            <TextBox HorizontalAlignment="Left" Height="145" FontSize="15" Margin="419,27,0,0" TextWrapping="Wrap" Text="https://qr.nspk.ru/AD1F2CD7212E48FA919AB52EF0AEFB33?type=02&amp;bank=10000001&amp;sum=111000&amp;cur=RUB&amp;crc=C08B" VerticalAlignment="Top" Width="350"/>
+            <TextBox x:Name="urlResult" HorizontalAlignment="Left" Height="145" FontSize="15" Margin="419,27,0,0" TextWrapping="Wrap" Text="URL-ссылка на QR" VerticalAlignment="Top" Width="350"/>
             <Label Content="Если платёж был успешно сформирован, &#xD;&#xA;ссылка появится сверху" HorizontalContentAlignment="Center" FontSize="17" HorizontalAlignment="Left" Margin="419,177,0,0" VerticalAlignment="Top" Width="350" Height="65"/>
             <Label x:Name="resultSend" Content=""  FontSize="30" HorizontalAlignment="Left" Height="64" Margin="16,292,0,0" VerticalAlignment="Top" Width="323" FontStyle="Italic" Background="White" Foreground="#FF060302"/>
             <Button Content="Проверить платёж" FontSize="25" HorizontalAlignment="Left" Height="48" Margin="10,356,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" Click="Button_Click"/>

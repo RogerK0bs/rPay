@@ -50,10 +50,15 @@ namespace rPay.Windows
             try
             {
                API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text));
-               resultSend.Content = "Успешно отправлено!";
-               resultSend.Foreground = System.Windows.Media.Brushes.Green;
                
-
+                using (var context = new ApplicationContext())
+                {
+                    RespPayment respPayment = new RespPayment();
+                    var resqr = context.RespPayment.LastOrDefault();
+                    urlResult.Text = resqr.payload.First().ToString();
+                }
+                resultSend.Content = "Успешно создано!";
+                resultSend.Foreground = System.Windows.Media.Brushes.Green;
             }
             catch (Exception ex) 
             {
@@ -74,5 +79,7 @@ namespace rPay.Windows
         {
             return "ООО Медика НСК - "+pacientCard;
         }
+
+        
     }
 }
