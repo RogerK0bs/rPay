@@ -12,7 +12,7 @@
 
         <Button x:Name="deletUser" Content="Удалить " FontSize="23" HorizontalAlignment="Left" Height="43" Margin="987,10,0,0" VerticalAlignment="Top" Width="169" Click="deletUser_Click"/>
 
-        <ListBox x:Name="userList" FontSize="15" HorizontalAlignment="Center" Height="802" Margin="0,72,0,0" VerticalAlignment="Top" Width="1112" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="userList" FontSize="15" HorizontalAlignment="Center" Height="802" Margin="0,72,0,0" VerticalAlignment="Top" Width="1112" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="userList_SelectionChanged"/>
 
 
 

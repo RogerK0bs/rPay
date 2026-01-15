@@ -59,5 +59,10 @@ namespace rPay.Windows.WindowsAdmin
             CreateUser createUser = new CreateUser();
             createUser.Show();
         }
+
+        private void userList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

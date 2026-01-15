@@ -39,19 +39,19 @@ namespace rPay.Windows
 
         private void getPay_Click(object sender, RoutedEventArgs e)
         {
+            ListStatus.Items.Refresh();
             using (var context = new ApplicationContext())
             {
                 resultPay resultPay = new resultPay();
-                   
                 for (int i = 1; i <= context.RespPayment.Count(); i++)
                 {
-                    API.Status.get.statusOrder(QRcode);
+                    ListStatus.Items.Add(API.Status.get.statusOrder(QRcode)).ToString();
                 }
-                ListStatus.Items.Refresh();
-                foreach (PayStatus payStatus in context.PayStatus)
-                {
-                    ListStatus.Items.Add(payStatus).ToString();
-                }
+               //  ListStatus.Items.Refresh();
+               // foreach (PayStatus payStatus in context.PayStatus)
+               // {
+               //     ListStatus.Items.Add(payStatus).ToString();
+               // }
             }
         }
         private void selectKassa_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,11 +68,6 @@ namespace rPay.Windows
                     QRcode = "BS1A000FRIBGI1CI8H4BBN5561OOTOLK";
                     break;
             }
-
-
-         
-
-
         }
     }
 
