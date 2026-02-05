@@ -1,6 +1,7 @@
-﻿using rPay.DB;
-using rPay.Windows;
+﻿using Newtonsoft.Json.Linq;
+using rPay.DB;
 using rPay.Service;
+using rPay.Windows;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,9 +25,10 @@ namespace rPay.Windows
     /// <summary>
     /// Логика взаимодействия для crtOrder.xaml
     /// </summary>
- 
+    
     public partial class crtOrder : Window
     {
+        public string aFIO = "";
         public crtOrder()
         {
             InitializeComponent();
@@ -47,21 +49,17 @@ namespace rPay.Windows
                 var value = context.RespPayment.Count();
                 rPay.Service.resultPay valuePayLoad = new rPay.Service.resultPay();
                 urlResult.Text = valuePayLoad.payLoad(value).ToString();
+                Service.mailSender mailSender = new Service.mailSender();
+                mailSender.mailForward(mailPacient.Text, valuePayLoad.payLoad(value).ToString(), patientsСard.Text);
             }
-
-
-
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
             {
-               API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text));
-                
-              
+                API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text));
                 resultSend.Content = "Успешно создано!";
                 resultSend.Foreground = System.Windows.Media.Brushes.Green;
-
             }
             catch (Exception ex) 
             {

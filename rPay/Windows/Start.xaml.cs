@@ -30,6 +30,8 @@ namespace rPay.Windows
             InitializeComponent();
             {
                 fioUser.Content = user.FIO(MainWindow._userActive);
+                mailSender mailSender = new mailSender();
+                mailSender.aFIO(user.FIO(MainWindow._userActive));
             }
         }
 
@@ -38,13 +40,11 @@ namespace rPay.Windows
             crtOrder crtOrder = new crtOrder();
             crtOrder.Show();
         }
-
         private void returnPay_Click(object sender, RoutedEventArgs e)
         {
             bckOrder bckOrder = new bckOrder();
             bckOrder.Show();
         }
-
         private void statusQRdynamic_Click(object sender, RoutedEventArgs e)
         {
             StatusSQR staticOrder = new StatusSQR();
@@ -55,12 +55,10 @@ namespace rPay.Windows
             if (user.Permissions(MainWindow._userActive) == "Admin")
             {
                 UserList userList = new UserList();
-            userList.Show();
+                userList.Show();
             }
-            else MessageBox.Show("У вас недостаточно правю", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            else MessageBox.Show("У вас недостаточно прав", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
         private void deletOrder_Click(object sender, RoutedEventArgs e)
         {
             if ((user.Permissions(MainWindow._userActive) == "Admin") || (user.Permissions(MainWindow._userActive) == "UserAdmin"))

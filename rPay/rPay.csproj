@@ -107,6 +107,7 @@
     <Compile Include="Service\Authorization.cs" />
     <Compile Include="Service\creatUser.cs" />
     <Compile Include="Service\deletUser.cs" />
+    <Compile Include="Service\mailSender.cs" />
     <Compile Include="Service\resultPay.cs" />
     <Compile Include="Service\userStructure.cs" />
     <Compile Include="Windows\bckOrder.xaml.cs">

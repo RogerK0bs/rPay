@@ -13,9 +13,9 @@ public class ApplicationContext : DbContext
     public DbSet<RespPayment> RespPayment { get; set; }
     public DbSet<UserAction> UserActions { get; set; }
     public DbSet<PayStatus> PayStatus { get; set; }
-    public DbSet<REG1> REG1 { get; set; }
-    public DbSet<REG1> REG2 { get; set; }
-    public DbSet<REG1> REG3 { get; set; }
+   // public DbSet<RespPayment> REG1 { get; set; }
+   // public DbSet<RespPayment> REG2 { get; set; }
+   // public DbSet<RespPayment> REG3 { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
@@ -24,8 +24,8 @@ public class ApplicationContext : DbContext
         modelBuilder.Entity<RespPayment>().ToTable("RespPayment");
         modelBuilder.Entity<UserAction>().ToTable("UserAction");
         modelBuilder.Entity<PayStatus>().ToTable("PayStatus");
-        modelBuilder.Entity<REG1>().ToTable("REG1");
-        modelBuilder.Entity<REG2>().ToTable("REG2");
-        modelBuilder.Entity<REG3>().ToTable("REG3");
+      //  modelBuilder.Entity<REG1>().ToTable("REG1");
+      //  modelBuilder.Entity<REG2>().ToTable("REG2");
+       // modelBuilder.Entity<REG3>().ToTable("REG3");
     }
 }

@@ -22,8 +22,6 @@
             <Label Content="Если платёж был успешно сформирован, &#xD;&#xA;ссылка появится сверху" HorizontalContentAlignment="Center" FontSize="17" HorizontalAlignment="Left" Margin="419,177,0,0" VerticalAlignment="Top" Width="350" Height="65"/>
             <Label x:Name="resultSend" Content=""  FontSize="30" HorizontalAlignment="Left" Height="64" Margin="16,292,0,0" VerticalAlignment="Top" Width="323" FontStyle="Italic" Background="White" Foreground="#FF060302"/>
             <Button Content="Проверить платёж" FontSize="25" HorizontalAlignment="Left" Height="48" Margin="10,356,0,0" VerticalAlignment="Top" Width="335" FontWeight="Bold" Click="Button_Click"/>
-            
         </Grid>
-
     </Grid>
 </Window>

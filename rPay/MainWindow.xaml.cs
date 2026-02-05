@@ -40,7 +40,6 @@ namespace rPay
         {
             _userActive = Login.Text;
             string _password = Password.Password;
-
             using (var context = new ApplicationContext())
             {
                 try
@@ -51,9 +50,7 @@ namespace rPay
                         Start start = new Start();
                         start.Show();
                         Close();
-                        
                     }
-                   
                 }
                 catch (Exception ex)
                 {
