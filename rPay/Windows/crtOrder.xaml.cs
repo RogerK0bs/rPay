@@ -86,6 +86,6 @@ namespace rPay.Windows
             return "ООО Медика НСК - "+pacientCard;
         }
 
-        
+       
     }
 }
