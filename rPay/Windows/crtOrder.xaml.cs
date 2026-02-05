@@ -43,15 +43,20 @@ namespace rPay.Windows
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            using (var context = new ApplicationContext())
-            {
-                RespPayment respPayment = new RespPayment();
-                var value = context.RespPayment.Count();
-                rPay.Service.resultPay valuePayLoad = new rPay.Service.resultPay();
-                urlResult.Text = valuePayLoad.payLoad(value).ToString();
-                Service.mailSender mailSender = new Service.mailSender();
-                mailSender.mailForward(mailPacient.Text, valuePayLoad.payLoad(value).ToString(), patientsСard.Text);
-            }
+            
+                using (var context = new ApplicationContext())
+                {
+                    RespPayment respPayment = new RespPayment();
+                    var value = context.RespPayment.Count();
+                    rPay.Service.resultPay valuePayLoad = new rPay.Service.resultPay();
+                    urlResult.Text = valuePayLoad.payLoad(value).ToString();
+                if (mailPacient.Text != "")
+                    {
+                    Service.mailSender mailSender = new Service.mailSender();
+                    mailSender.mailForward(mailPacient.Text, valuePayLoad.payLoad(value).ToString(), patientsСard.Text);
+                    }
+                }
+            
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
