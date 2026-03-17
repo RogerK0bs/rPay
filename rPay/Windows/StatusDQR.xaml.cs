@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using rPay.API.Status;
+using rPay.DB;
 
 namespace rPay.Windows
 {
@@ -22,6 +24,26 @@ namespace rPay.Windows
         public StatusDQR()
         {
             InitializeComponent();
+
+        }
+
+        private void updateStatus_Click(object sender,  RoutedEventArgs e)
+        {                                   
+                getStatus();
+        }
+        private async Task getStatus ()
+        {
+            PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
+            if (payStatus != null)
+            {
+                numberPacient.Content = payStatus.order;
+                if (payStatus.paymentStatus == "SUCCESS")
+                {
+                    statusPay.Content = "Оплачено";
+                }
+                else statusPay.Content = "нет данных";
+                    price.Content = payStatus.amount;
+            } 
         }
     }
 }

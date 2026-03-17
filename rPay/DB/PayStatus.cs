@@ -22,7 +22,7 @@ namespace rPay.DB
         public string qrId { get; set; } = string.Empty;
         public string sbpMerchantId { get; set; } = string.Empty;
         public string transactionDate { get; set; } = string.Empty;
-        public string transactionId { get; set; } = string.Empty;
+        public int transactionId { get; set; }
         public string qrExpirationDate { get; set; } = string.Empty;
         public override string ToString()
         {

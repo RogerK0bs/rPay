@@ -17,7 +17,7 @@ namespace rPay.Service
             SmtpClient smtp = new SmtpClient();
             //string host = "192.168.100.27";
             string host = "192.168.112.72";
-            int port = 25;
+            int port = 587;
             MailAddress from = new MailAddress("medica.nsk-sbp@gm.clinic", "ООО Медика НСК");
             MailAddress to = new MailAddress(mail);
             MailMessage m = new MailMessage(from, to);

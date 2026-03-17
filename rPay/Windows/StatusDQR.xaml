@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rPay.Windows"
         mc:Ignorable="d"
-        Title="Статус платежа" Height="450" Width="800">
+        Title="Статус платежа" MinHeight="400" MaxHeight="400" Height="400" MinWidth="400" MaxWidth="400" Width="400">
     <Grid>
-        
+        <Label FontSize="20" HorizontalContentAlignment="Center" Content="Номер карты:" HorizontalAlignment="Left" Height="40" Margin="54,72,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label FontSize="20" HorizontalContentAlignment="Center" Content="Статус платежа:" HorizontalAlignment="Left" Height="40" Margin="54,117,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label FontSize="20" HorizontalContentAlignment="Center" Content="Сумма:" HorizontalAlignment="Left" Height="36" Margin="54,158,0,0" VerticalAlignment="Top" Width="151"/>
+        <Button x:Name="updateStatus" FontSize="20" Content="Обновить"  HorizontalAlignment="Center" Height="39" Margin="0,269,0,0" VerticalAlignment="Top" Width="152" Click="updateStatus_Click"/>
+        <Label FontSize="20" HorizontalContentAlignment="Center" BorderBrush="Bisque" BorderThickness="2" Content="" x:Name="numberPacient" HorizontalAlignment="Left" Height="40" Margin="210,72,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label FontSize="20" HorizontalContentAlignment="Center" BorderBrush="Bisque" BorderThickness="2" Content="" x:Name="statusPay" HorizontalAlignment="Left" Height="40" Margin="210,117,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label FontSize="20" HorizontalContentAlignment="Center" BorderBrush="Bisque" BorderThickness="2" Content="" x:Name="price" HorizontalAlignment="Left" Height="40" Margin="210,154,0,0" VerticalAlignment="Top" Width="151"/>
+        <Label FontSize="15" HorizontalContentAlignment="Center" BorderThickness="2" BorderBrush="Aqua" Content="BD10001OS32I014L9KQPKUB4E3E0MUN6" x:Name="qrId" HorizontalAlignment="Left" Height="41" Margin="54,10,0,0" VerticalAlignment="Top" Width="307"/>
+
     </Grid>
 </Window>
