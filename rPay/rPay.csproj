@@ -120,9 +120,6 @@
     <Compile Include="DB\dbContext.cs" />
     <Compile Include="DB\PaymentReceipt.cs" />
     <Compile Include="DB\PayStatus.cs" />
-    <Compile Include="DB\REG1.cs" />
-    <Compile Include="DB\REG2.cs" />
-    <Compile Include="DB\REG3.cs" />
     <Compile Include="DB\RespPayment.cs" />
     <Compile Include="DB\UserAction.cs" />
     <Compile Include="DB\Users.cs" />
