@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using rPay.API.Status;
 using rPay.DB;
+using rPay.Service;
 
 namespace rPay.Windows
 {
@@ -21,15 +22,18 @@ namespace rPay.Windows
     /// </summary>
     public partial class StatusDQR : Window
     {
+        rPay.Service.resultPay result = new rPay.Service.resultPay();
         public StatusDQR()
         {
             InitializeComponent();
+            qrId.Content = result.qrId(123);
 
         }
 
         private void updateStatus_Click(object sender,  RoutedEventArgs e)
         {                                   
-                getStatus();
+            getStatus();
+           
         }
         private async Task getStatus ()
         {

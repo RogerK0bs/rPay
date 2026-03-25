@@ -11,7 +11,6 @@ namespace rPay.DB
     [Table("PaymentReceipt")]
     public class PaymentReceipt
     {
-   
        public int id { get; set; }
        public string account { get; set; }
        public string additionalInfo { get; set; } = string.Empty;
