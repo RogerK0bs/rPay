@@ -22,22 +22,30 @@ namespace rPay.Windows
     /// </summary>
     public partial class StatusDQR : Window
     {
+        public int _value;
+        public string _qrId;
+        
         rPay.Service.resultPay result = new rPay.Service.resultPay();
         public StatusDQR()
         {
             InitializeComponent();
-            qrId.Content = result.qrId(123);
+            using (var context = new ApplicationContext())
+            {
+                RespPayment respPayment = new RespPayment();
+                var value = context.RespPayment.Count();
+                qrId.Content = result.qrId(_value);
+            }
 
         }
 
         private void updateStatus_Click(object sender,  RoutedEventArgs e)
         {                                   
             getStatus();
-           
         }
         private async Task getStatus ()
         {
-            PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
+           // PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
+            PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(result.qrId(_value));
             if (payStatus != null)
             {
                 numberPacient.Content = payStatus.order;
@@ -45,7 +53,7 @@ namespace rPay.Windows
                 {
                     statusPay.Content = "Оплачено";
                 }
-                else statusPay.Content = "нет данных";
+                else statusPay.Content = "Нет оплаты";
                     price.Content = payStatus.amount;
             } 
         }

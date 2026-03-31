@@ -13,6 +13,7 @@
             <Button x:Name="returnPay" Content="Вернуть пациенту" FontSize="16" HorizontalAlignment="Left" Height="49" Margin="10,125,0,0" VerticalAlignment="Top" Width="142" Click="returnPay_Click"/>
             <Label x:Name="fioUser" FontSize="30" HorizontalContentAlignment="Center" Content="" HorizontalAlignment="Left" Height="56" Margin="10,10,0,0" VerticalAlignment="Top" Width="276" FontWeight="Bold" />
             <Button Content="ВЫХОД" FontSize="25" HorizontalAlignment="Left" Height="44" Margin="10,350,0,0" VerticalAlignment="Top" Width="138" Click="Button_Click"/>
+            <Button x:Name="statusDQR" Content="Платежи" FontSize="16" HorizontalAlignment="Left" Height="47" Margin="10,233,0,0" VerticalAlignment="Top" Width="142" Click="statusDQR_Click"/>
 
         </Grid>
         <Grid HorizontalAlignment="Left" Height="202" Margin="405,20,0,0" VerticalAlignment="Top" Width="385">

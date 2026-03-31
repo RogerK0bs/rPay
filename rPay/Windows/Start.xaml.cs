@@ -76,5 +76,12 @@ namespace rPay.Windows
             mainWindow.Show();
             Close();
         }
+
+        private void statusDQR_Click(object sender, RoutedEventArgs e)
+        {
+            listStatusDQR listStatusDQR = new listStatusDQR();
+            listStatusDQR.Show();
+            
+        }
     }
 }

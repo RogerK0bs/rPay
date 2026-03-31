@@ -23,5 +23,10 @@ namespace rPay.DB
        public string sbpMerchantId { get; set; } = string.Empty;
        public string redirectUrl {  get; set; } = string.Empty;
        public string qrDescription { get; set; } = string.Empty;
+        public override string ToString()
+        {
+            return $"№{id} {qrDescription}\t\t{amount} {currency}";
+        }
+        
     }
 }

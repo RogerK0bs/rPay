@@ -144,6 +144,9 @@
     <Compile Include="Windows\crtOrder.xaml.cs">
       <DependentUpon>crtOrder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\listStatusDQR.xaml.cs">
+      <DependentUpon>listStatusDQR.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\crtOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\listStatusDQR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
