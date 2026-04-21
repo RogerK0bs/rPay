@@ -16,7 +16,7 @@ namespace rPay.API.Registry
     
     public class post
     {
-        public static async Task createOrder (string _payment, string _order, string _endData, string _patientsСard)
+        public static async Task createOrder (string _payment, string _order, string _endData, string _patientsСard, string FIO)
         {
             using (var context = new ApplicationContext()) 
             {
@@ -24,7 +24,7 @@ namespace rPay.API.Registry
                 float _price = Convert.ToSingle(_payment);
                 PaymentReceipt paymentReceipt = new PaymentReceipt
                 {
-                    account = "",
+                    account = FIO,
                     additionalInfo = "Оплата мед. услуг",
                     amount = _price,
                     currency = "RUB",

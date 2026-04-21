@@ -44,7 +44,8 @@ namespace rPay.Windows
         }
         private async Task getStatus ()
         {
-           // PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
+            // PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
+            qrId.Content = result.qrId(_value);
             PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(result.qrId(_value));
             if (payStatus != null)
             {

@@ -26,9 +26,11 @@ namespace rPay.Windows
     /// Логика взаимодействия для crtOrder.xaml
     /// </summary>
     
+
     public partial class crtOrder : Window
     {
-        public string aFIO = "";
+        public string fio = "";
+        
         public crtOrder()
         {
             InitializeComponent();
@@ -62,9 +64,13 @@ namespace rPay.Windows
         {
             try
             {
-                API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text));
-                resultSend.Content = "Успешно создано!";
-                resultSend.Foreground = System.Windows.Media.Brushes.Green;
+                using (var context = new ApplicationContext())
+                {
+                    
+                    API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text), fio);
+                    resultSend.Content = "Успешно создано!";
+                    resultSend.Foreground = System.Windows.Media.Brushes.Green;
+                }
             }
             catch (Exception ex) 
             {
@@ -86,6 +92,6 @@ namespace rPay.Windows
             return "ООО Медика НСК - "+pacientCard;
         }
 
-       
+      
     }
 }

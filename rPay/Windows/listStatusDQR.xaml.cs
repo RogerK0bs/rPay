@@ -48,10 +48,10 @@ namespace rPay.Windows
 
         private void checkPay_Click(object sender, RoutedEventArgs e)
         {
+            
             numPay.Content = listQR.SelectedIndex+1;
             StatusDQR statusDQR = new StatusDQR();
             statusDQR._value = listQR.SelectedIndex+1;
-            statusDQR._qrId = 
             statusDQR.ShowDialog();
            
         }

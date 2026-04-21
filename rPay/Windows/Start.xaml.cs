@@ -24,20 +24,25 @@ namespace rPay.Windows
     public partial class Start : Window
     {
         userStructure user = new userStructure();
+        public string usr = "";
+        
 
         public Start()
         {
             InitializeComponent();
             {
-                fioUser.Content = user.FIO(MainWindow._userActive);
+                usr = user.FIO(MainWindow._userActive);
+                fioUser.Content = usr;
                 mailSender mailSender = new mailSender();
                 mailSender.aFIO(user.FIO(MainWindow._userActive));
+               
             }
         }
 
         private void createOrder_Click(object sender, RoutedEventArgs e)
         {
             crtOrder crtOrder = new crtOrder();
+            crtOrder.fio = usr;
             crtOrder.Show();
         }
         private void returnPay_Click(object sender, RoutedEventArgs e)
