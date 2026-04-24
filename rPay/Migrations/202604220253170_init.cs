@@ -42,7 +42,7 @@
                         qrId = c.String(),
                         sbpMerchantId = c.String(),
                         transactionDate = c.String(),
-                        transactionId = c.String(),
+                        transactionId = c.Int(nullable: false),
                         qrExpirationDate = c.String(),
                     })
                 .PrimaryKey(t => t.id);

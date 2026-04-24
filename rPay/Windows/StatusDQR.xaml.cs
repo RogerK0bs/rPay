@@ -1,5 +1,9 @@
-﻿using System;
+﻿using rPay.API.Status;
+using rPay.DB;
+using rPay.Service;
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +15,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using rPay.API.Status;
-using rPay.DB;
-using rPay.Service;
 
 namespace rPay.Windows
 {
@@ -24,7 +25,7 @@ namespace rPay.Windows
     {
         public int _value;
         public string _qrId;
-        
+
         rPay.Service.resultPay result = new rPay.Service.resultPay();
         public StatusDQR()
         {
@@ -38,25 +39,28 @@ namespace rPay.Windows
 
         }
 
-        private void updateStatus_Click(object sender,  RoutedEventArgs e)
-        {                                   
+        private void updateStatus_Click(object sender, RoutedEventArgs e)
+        {
             getStatus();
         }
-        private async Task getStatus ()
+        private async Task getStatus()
         {
             // PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(qrId.Content.ToString());
-            qrId.Content = result.qrId(_value);
-            PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(result.qrId(_value));
-            if (payStatus != null)
-            {
-                numberPacient.Content = payStatus.order;
-                if (payStatus.paymentStatus == "SUCCESS")
+          
+                qrId.Content = result.qrId(_value);
+                PayStatus payStatus = await rPay.API.Status.get.GetStatus<PayStatus>(result.qrId(_value));
+                if (payStatus != null)
                 {
-                    statusPay.Content = "Оплачено";
-                }
-                else statusPay.Content = "Нет оплаты";
+                    numberPacient.Content = payStatus.order;
+                    if (payStatus.paymentStatus == "SUCCESS")
+                    {
+                        statusPay.Content = "Оплачено";
+                    }
+                    else statusPay.Content = "Нет оплаты";
                     price.Content = payStatus.amount;
-            } 
+                }
         }
+         
+        
     }
 }

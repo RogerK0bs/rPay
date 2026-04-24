@@ -36,12 +36,7 @@ namespace rPay.Windows
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            StatusDQR statusDQR = new StatusDQR();
-            Close();
-            statusDQR.Show();
-        }
+       
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -66,8 +61,15 @@ namespace rPay.Windows
             {
                 using (var context = new ApplicationContext())
                 {
-                    
-                    API.Registry.post.createOrder(payment.Text, patientsСard.Text, correctDate(), pacient(patientsСard.Text), fio);
+                    DateTime date = DateTime.Now;
+                    UserAction userAction = new UserAction {
+                    FIO = fio,
+                    action = "Создание - "+date.ToString(),
+                    };
+                    context.UserActions.Add(userAction);
+                    context.SaveChanges();
+                    var patMD5 = Service.md5encrypt.EncryptMd5Hash(patientsСard.Text+date.ToString());
+                    API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
                     resultSend.Content = "Успешно создано!";
                     resultSend.Foreground = System.Windows.Media.Brushes.Green;
                 }

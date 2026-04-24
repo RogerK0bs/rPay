@@ -13,7 +13,7 @@ namespace rPay.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202508260628040_init"; }
+            get { return "202604220253170_init"; }
         }
         
         string IMigrationMetadata.Source
