@@ -123,9 +123,13 @@
     <Compile Include="DB\RespPayment.cs" />
     <Compile Include="DB\UserAction.cs" />
     <Compile Include="DB\Users.cs" />
-    <Compile Include="Migrations\202604220253170_init.cs" />
-    <Compile Include="Migrations\202604220253170_init.Designer.cs">
-      <DependentUpon>202604220253170_init.cs</DependentUpon>
+    <Compile Include="Migrations\202604280912393_init1.cs" />
+    <Compile Include="Migrations\202604280912393_init1.Designer.cs">
+      <DependentUpon>202604280912393_init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202604281022159_init2.cs" />
+    <Compile Include="Migrations\202604281022159_init2.Designer.cs">
+      <DependentUpon>202604281022159_init2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Service\Authorization.cs" />
@@ -235,8 +239,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202604220253170_init.resx">
-      <DependentUpon>202604220253170_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202604280912393_init1.resx">
+      <DependentUpon>202604280912393_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604281022159_init2.resx">
+      <DependentUpon>202604281022159_init2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

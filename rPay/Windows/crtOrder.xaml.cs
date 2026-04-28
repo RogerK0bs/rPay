@@ -62,9 +62,12 @@ namespace rPay.Windows
                 using (var context = new ApplicationContext())
                 {
                     DateTime date = DateTime.Now;
-                    UserAction userAction = new UserAction {
-                    FIO = fio,
-                    action = "Создание - "+date.ToString(),
+                    UserAction userAction = new UserAction
+                    {
+                        FIO = fio,
+                        action = "Создание - " + date.ToString(),
+                        patcient = patientsСard.Text,
+                        amount = payment.Text
                     };
                     context.UserActions.Add(userAction);
                     context.SaveChanges();
