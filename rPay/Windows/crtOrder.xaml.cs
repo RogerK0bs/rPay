@@ -66,6 +66,8 @@ namespace rPay.Windows
                 API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
                 resultSend.Content = "Успешно создано!";
                 resultSend.Foreground = System.Windows.Media.Brushes.Green;
+                Thread.Sleep(2000);
+                resultSend.Content = "";
                 
             }
             catch (Exception ex) 

@@ -23,7 +23,7 @@ namespace rPay.DB
         }
         public string FileExist ()
         {
-            return FIO + " " + action + date + " " + patcient + ": " +amount +" руб";
+            return FIO + " " + action+" "+ date + " " + patcient + ": " +amount +" руб";
         }
 
 

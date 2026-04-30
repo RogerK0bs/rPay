@@ -18,14 +18,30 @@ namespace rPay
     {
         private void Application_Exit(object sender, ExitEventArgs e)
         {
+            
+            reportFile report = new reportFile();
+            string dt = "";
             using (ApplicationContext context = new ApplicationContext())
             {
-                reportFile report = new reportFile();
-                foreach (UserAction userAction in context.UserActions)
+                DateTime timeNow = DateTime.Now.Date;
+
+                foreach (var userAction in context.UserActions)
                 {
-                    report.GetFile(userAction.FileExist());
+                    DateTime parsedDate;
+                    if (DateTime.TryParse(userAction.date, out parsedDate))
+                    {
+                        if (parsedDate.Date == timeNow)
+                        {
+                            report.GetFile(userAction.FileExist());
+                        }
+                    }
+                    else
+                    {
+                        actionUser action = new actionUser();
+                        action.createAction("SYSTEM", "ОШИБКА", "В ОТЧЁТЕ","");
+                    }
                 }
-               
+
             }
         }
     }
