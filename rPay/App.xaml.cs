@@ -20,7 +20,6 @@ namespace rPay
         {
             
             reportFile report = new reportFile();
-            string dt = "";
             using (ApplicationContext context = new ApplicationContext())
             {
                 DateTime timeNow = DateTime.Now.Date;
@@ -37,8 +36,8 @@ namespace rPay
                     }
                     else
                     {
-                        actionUser action = new actionUser();
-                        action.createAction("SYSTEM", "ОШИБКА", "В ОТЧЁТЕ","");
+                      //  actionUser action = new actionUser();
+                      //  action.createAction("SYSTEM", "ОШИБКА", "В ОТЧЁТЕ","");
                     }
                 }
 
