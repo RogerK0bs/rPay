@@ -16,13 +16,14 @@ namespace rPay.DB
         public string action { get; set; } = string.Empty;
         public string patcient { get; set; } = string.Empty;
         public string amount { get; set; } = string.Empty;
+        public string date { get; set; } = string.Empty;
         public override string ToString()
         {
             return base.ToString();
         }
         public string FileExist ()
         {
-            return FIO + " " + action + " " + patcient + ": " +amount +" руб";
+            return FIO + " " + action + date + " " + patcient + ": " +amount +" руб";
         }
 
 

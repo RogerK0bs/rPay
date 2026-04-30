@@ -38,7 +38,6 @@ namespace rPay.Service
                 resultAsString = result?.ToString();
             }
             return resultAsString;
-
         }
         public string qrUrl (int id)
         {

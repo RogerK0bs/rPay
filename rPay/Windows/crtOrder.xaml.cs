@@ -59,23 +59,14 @@ namespace rPay.Windows
         {
             try
             {
-                using (var context = new ApplicationContext())
-                {
-                    DateTime date = DateTime.Now;
-                    UserAction userAction = new UserAction
-                    {
-                        FIO = fio,
-                        action = "Создание - " + date.ToString(),
-                        patcient = patientsСard.Text,
-                        amount = payment.Text
-                    };
-                    context.UserActions.Add(userAction);
-                    context.SaveChanges();
-                    var patMD5 = Service.md5encrypt.EncryptMd5Hash(patientsСard.Text+date.ToString());
-                    API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
-                    resultSend.Content = "Успешно создано!";
-                    resultSend.Foreground = System.Windows.Media.Brushes.Green;
-                }
+                actionUser action = new actionUser();
+                action.createAction(fio, "Создание", patientsСard.Text, payment.Text);
+                DateTime date = DateTime.Now;
+                var patMD5 = Service.md5encrypt.EncryptMd5Hash(patientsСard.Text+date.ToString());
+                API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
+                resultSend.Content = "Успешно создано!";
+                resultSend.Foreground = System.Windows.Media.Brushes.Green;
+                
             }
             catch (Exception ex) 
             {
