@@ -52,7 +52,9 @@ namespace rPay.Windows
                     Service.mailSender mailSender = new Service.mailSender();
                     mailSender.mailForward(mailPacient.Text, valuePayLoad.payLoad(value).ToString(), patientsСard.Text);
                     }
-                }
+                resultSend.Foreground = System.Windows.Media.Brushes.Black;
+                resultSend.Content = "Отправлено";
+            }
             
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -64,11 +66,8 @@ namespace rPay.Windows
                 DateTime date = DateTime.Now;
                 var patMD5 = Service.md5encrypt.EncryptMd5Hash(patientsСard.Text+date.ToString());
                 API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
-                resultSend.Content = "Успешно создано!";
+                resultSend.Content = "Успешно создано";
                 resultSend.Foreground = System.Windows.Media.Brushes.Green;
-                Thread.Sleep(2000);
-                resultSend.Content = "";
-                
             }
             catch (Exception ex) 
             {
