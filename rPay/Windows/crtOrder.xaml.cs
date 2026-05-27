@@ -66,14 +66,11 @@ namespace rPay.Windows
                 DateTime date = DateTime.Now;
                 var patMD5 = Service.md5encrypt.EncryptMd5Hash(patientsСard.Text+date.ToString());
                 API.Registry.post.createOrder(payment.Text,patMD5, correctDate(), pacient(patientsСard.Text));
-                resultSend.Content = "Успешно создано";
-                resultSend.Foreground = System.Windows.Media.Brushes.Green;
+                MessageBox.Show("Платёж успешно создан", "Создание QR!", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Information);
-                resultSend.Foreground = System.Windows.Media.Brushes.Red;
-                resultSend.Content="Ошибка!!!";
             }
         }
            
